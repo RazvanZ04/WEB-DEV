@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <!-- Meta-uri de baza pentru HTML5 si responsive layout. -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proiectul 3 - Filtrarea Inregistrarilor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Antetul paginii cu titlul aplicatiei. -->
+  <header class="site-header">
+    <div class="container">
+      <h1>Proiectul 3 - Filtrarea Inregistrarilor</h1>
+      <p>Aplicatie web pentru cautare si filtrare angajati.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Zona de filtre: cautare, pozitie, vechime, actiuni. -->
+    <section class="filters" aria-labelledby="filters-title">
+      <h2 id="filters-title">Filtre</h2>
+      <form id="filter-form" class="filters-form" autocomplete="off">
+        <!-- Input pentru nume/prenume. -->
+        <div class="field">
+          <label for="nameQuery">Cauta dupa nume sau prenume</label>
+          <input type="text" id="nameQuery" name="nameQuery" placeholder="ex: jac" />
+        </div>
+        <!-- Dropdown pentru pozitii unice. -->
+        <div class="field">
+          <label for="positionSelect">Pozitie</label>
+          <select id="positionSelect" name="positionSelect">
+            <option value="all">Toate pozitiile</option>
+          </select>
+        </div>
+        <!-- Checkbox pentru filtrul de vechime 6+ luni. -->
+        <div class="field checkbox-field">
+          <label>
+            <input type="checkbox" id="sixMonths" name="sixMonths" />
+            Angajati vechi 6+ luni
+          </label>
+        </div>
+        <!-- Actiuni: cauta si reset. -->
+        <div class="actions">
+          <button type="submit" class="btn primary">Cauta</button>
+          <button type="button" id="resetBtn" class="btn secondary">Reset</button>
+        </div>
+      </form>
+
+      <!-- Upload fisier JSON (FileReader API). -->
+      <div class="upload">
+        <label class="btn outline">
+          Incarca fisier JSON
+          <input type="file" id="fileInput" accept="application/json" hidden />
+        </label>
+        <span id="uploadStatus" class="status" role="status" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <!-- Zona de rezultate afisata in tabel. -->
+    <section class="results" aria-labelledby="results-title">
+      <h2 id="results-title">Rezultate</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nume</th>
+              <th>Prenume</th>
+              <th>Pozitie</th>
+              <th>Data angajarii</th>
+            </tr>
+          </thead>
+          <tbody id="resultsBody"></tbody>
+        </table>
+      </div>
+      <p id="noResults" class="no-results" role="status">Nu exista rezultate pentru filtrele selectate.</p>
+    </section>
+  </main>
+
+  <!-- Scriptul de logica al aplicatiei. -->
+  <script src="app.js" defer></script>
+</body>
+</html>
+

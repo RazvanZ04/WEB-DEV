@@ -1,0 +1,195 @@
+:root {
+  /* Variabile de culoare pentru tema aplicatiei. */
+  color-scheme: light;
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #1a1f2c;
+  --muted: #5c667a;
+  --accent: #3b6cff;
+  --border: #dfe3eb;
+  --shadow: 0 10px 30px rgba(27, 39, 94, 0.08);
+}
+
+* {
+  /* Reset simplu pentru spatii si box model. */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Stiluri globale pentru font si fundal. */
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.container {
+  /* Limiteaza latimea continutului si il centreaza. */
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.site-header {
+  /* Antet cu gradient si umbra discreta. */
+  background: linear-gradient(135deg, #2740cc, #4f7cff);
+  color: #fff;
+  padding: 40px 0;
+  box-shadow: var(--shadow);
+}
+
+.site-header h1 {
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  margin-bottom: 8px;
+}
+
+.site-header p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.filters,
+.results {
+  /* Carduri pentru zonele principale. */
+  background: var(--card);
+  padding: 24px;
+  border-radius: 16px;
+  margin-top: 24px;
+  box-shadow: var(--shadow);
+}
+
+.filters h2,
+.results h2 {
+  margin-bottom: 16px;
+}
+
+.filters-form {
+  /* Layout flex pentru campurile de filtrare. */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 220px;
+  gap: 6px;
+}
+
+.field label {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.field input[type="text"],
+.field select {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-size: 1rem;
+}
+
+.checkbox-field {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.actions {
+  /* Grup de butoane aliniate pe flex. */
+  display: flex;
+  gap: 10px;
+  flex: 1 1 220px;
+}
+
+.btn {
+  /* Stil de baza pentru butoane. */
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(59, 108, 255, 0.25);
+}
+
+.btn.secondary {
+  background: #f0f2f7;
+  color: var(--text);
+}
+
+.btn.outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 9px 16px;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.upload {
+  /* Zona de upload afisata sub formular. */
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.status {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.table-wrap {
+  /* Permite scroll orizontal pe ecrane mici. */
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  background: #f3f5fb;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.no-results {
+  /* Mesajul pentru situatie fara rezultate. */
+  margin-top: 16px;
+  color: #b03a3a;
+  font-weight: 600;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Ajustari pentru ecrane mici. */
+  .actions {
+    width: 100%;
+  }
+
+  table {
+    min-width: 480px;
+  }
+}

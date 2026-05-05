@@ -1,0 +1,14 @@
+{
+  "employees": [
+    { "firstName": "Jackson", "lastName": "Bailey", "position": "Manager", "startDate": "2023-01-15" },
+    { "firstName": "Jacqueline", "lastName": "Smith", "position": "Developer", "startDate": "2024-08-01" },
+    { "firstName": "Chris", "lastName": "Jones", "position": "Designer", "startDate": "2022-11-20" },
+    { "firstName": "Aaron", "lastName": "Jones", "position": "Developer", "startDate": "2025-10-05" },
+    { "firstName": "Mai", "lastName": "Ling", "position": "HR", "startDate": "2021-03-12" },
+    { "firstName": "Jim", "lastName": "Johnson", "position": "Manager", "startDate": "2023-07-30" },
+    { "firstName": "Sabrina", "lastName": "Zarnecki", "position": "Designer", "startDate": "2024-12-01" },
+    { "firstName": "Geoffrey", "lastName": "Swift", "position": "Developer", "startDate": "2022-05-18" },
+    { "firstName": "Fong", "lastName": "Xiong", "position": "HR", "startDate": "2026-05-05" }
+  ]
+}
+
